@@ -10,30 +10,30 @@ function teardownTest(){
 }
 
 function createSeats(section,seats,price){
-	$('#secion-input').val(section);
+	$('#section-input').val(section);
   $('#seats-input').val(seats);
   $('#price-input').val(price);
   $('#create-seats').trigger('click');
 }
 
 function existAndVisible(element){
-	deepEqual(element.length, true, element.selector + 'should exist');
-  deepEqual(element.is(':visible'), true, element.selector + 'should be visible');
+	deepEqual(element.length, true, element.selector + ' should exist');
+  deepEqual(element.is(':visible'), true, element.selector + ' should be visible');
 }
 
 test('Select Section Dropdown Exists and is Visible', function(){
   expect(2);
-  existAndVisible($('#secion-input'));
+  existAndVisible($('#section-input'));
 });
 
 test('Seat Input Exists and is Visible', function(){
   expect(2);
-  existAndVisible($('#secion-input'));
+  existAndVisible($('#section-input'));
 });
 
 test('Seat Price Input Exists and is Visible', function(){
   expect(2);
-  existAndVisible($('#secion-input'));
+  existAndVisible($('#section-input'));
 });
 
 test('Create Seats Button Exists and is Visible', function(){
