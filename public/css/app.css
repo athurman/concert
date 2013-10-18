@@ -1,3 +1,9 @@
+html, body {
+  background-color: #BEF4E0; }
+
+h1 {
+  color: #48A9BF; }
+
 .center {
   text-align: center; }
 
@@ -9,3 +15,7 @@
   background-color: #5BBF9B;
   border-bottom-left-radius: 150px;
   border-bottom-right-radius: 150px; }
+
+#stage-outline > h3 {
+  padding-top: 40px;
+  color: #fff; }
