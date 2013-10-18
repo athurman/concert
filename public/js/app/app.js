@@ -27,15 +27,16 @@ function clickCreateSeats() {
   if ($('#section-input > option:selected').val() === 'vip') {
     htmlAddDivs(seatNumber, $vip, 'V');
     $vip.attr('data-price', formatCurrency(price));
-    $('#section-input > option:selected').addClass('disabled');
+    $('#section-input > option:selected').remove();
     $('#section-input').val('ga');
   } else {
     htmlAddDivs(seatNumber, $ga, 'GA');
     $ga.attr('data-price', formatCurrency(price));
-    $('#section-input > option:selected').addClass('disabled');
+    $('#section-input > option:selected').remove();
     $('#section-input').val('vip');
   }
-  if($('option.disabled').length === 3) {
+  $('#section-input').trigger('change', true);
+  if($('option').length === 1) {
     $('#add-seats').remove();
   }
 }
