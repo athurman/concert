@@ -17,7 +17,7 @@ function createSeats(section,seats,price){
 }
 
 function existAndVisible(element){
-	deepEqual(element.length, true, element.selector + ' should exist');
+	equal(element.length, true, element.selector + ' should exist');
   deepEqual(element.is(':visible'), true, element.selector + ' should be visible');
 }
 
@@ -62,12 +62,12 @@ test('Create Seats Button adds data-price element to the proper section', functi
 });
 
 test('Create Seats Button removes prior selections', function(){
-  expect(1);
+  expect(2);
   createSeats('vip','50',500);
-  deepEqual($('#section-input').val('vip'), false,
+  deepEqual($('#section-input').hasClass('disabled'), false,
   	'VIP selection should be removed once seats have been added');
   createSeats('vip','50',500);
-  deepEqual($('#section-input').val('ga'), false,
+  deepEqual($('#section-input').hasClass('disabled'), false,
   	'General Admission selection should be removed once seats have been added');
 });
 
