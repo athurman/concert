@@ -24,7 +24,6 @@ function clickCreateSeats() {
   var price = getValue('#price-input', parseFloat);
   var $vip = $('#vip');
   var $ga = $('#ga');
-  debugger;
   if ($('#section-input > option:selected').val() === 'vip') {
     htmlAddDivs(seatNumber, $vip, 'V');
     $vip.attr('data-price', formatCurrency(price));
