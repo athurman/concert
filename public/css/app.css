@@ -1,0 +1,11 @@
+.center {
+  text-align: center; }
+
+#stage-outline {
+  margin-top: 100px;
+  margin: 0 auto;
+  width: 450px;
+  height: 125px;
+  background-color: #5BBF9B;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px; }

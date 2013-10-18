@@ -1,1 +1,34 @@
 /#map-canvas
+.row
+  .small-12.columns
+    %header
+      %h1.center Concerter
+      .row
+        .small-3.columns
+          %form.custom
+            %label{for:'select-input'} Select Section:
+            %select#section-input.custom.dropdown.medium
+              %option.disabled Select
+        .small-3.columns
+          %label Number of Seats:
+          %input#seats-input{type:'text', autofocus:true, placeholder:'50'}
+        .small-3.columns
+          %label Price per Seat:
+          %input#price-input{type:'text', placeholder:'110'}
+        .small-3.columns
+          %input#create-seats.button.radius{type:'button', value:'Create'}
+.row
+  .small-12.columns
+    %section#stage
+      #stage-outline
+        %h3.center STAGE
+.row
+  .small-12.columns
+    %section#vip
+.row
+  .small-12.columns
+    %section#ga
+.row
+  .small-12.columns
+    %footer
+      %p.center Disclaimer

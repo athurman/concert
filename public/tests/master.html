@@ -4,7 +4,7 @@
 <head>
   <meta charset='utf-8'>
   <meta content='width=device-width' name='viewport'>
-  <title>Master Template</title>
+  <title>Concerter</title>
   <link href='/css/normalize.css' rel='stylesheet'>
   <link href='/css/foundation.css' rel='stylesheet'>
   <link href='/css/app.css' rel='stylesheet'>
@@ -16,6 +16,60 @@
   <div id='qunit'></div>
   <div id='qunit-fixture'>
     <!-- #map-canvas -->
+    <div class='row'>
+      <div class='small-12 columns'>
+        <header>
+          <h1 class='center'>Concerter</h1>
+          <div class='row'>
+            <div class='small-3 columns'>
+              <form class='custom'>
+                <label for='select-input'>Select Section:</label>
+                <select class='custom dropdown medium' id='section-input'>
+                  <option class='disabled'>Select</option>
+                </select>
+              </form>
+            </div>
+            <div class='small-3 columns'>
+              <label>Number of Seats:</label>
+              <input autofocus id='seats-input' placeholder='50' type='text'>
+            </div>
+            <div class='small-3 columns'>
+              <label>Price per Seat:</label>
+              <input id='price-input' placeholder='110' type='text'>
+            </div>
+            <div class='small-3 columns'>
+              <input class='button radius' id='create-seats' type='button' value='Create'>
+            </div>
+          </div>
+        </header>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <section id='stage'>
+          <div id='stage-outline'>
+            <h3 class='center'>STAGE</h3>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <section id='vip'></section>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <section id='ga'></section>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='small-12 columns'>
+        <footer>
+          <p class='center'>Disclaimer</p>
+        </footer>
+      </div>
+    </div>
   </div>
   <script src='/js/vendor/jquery-1.10.2.js'></script>
   <script src='/js/vendor/foundation.min.js'></script>
