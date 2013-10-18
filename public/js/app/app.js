@@ -28,12 +28,12 @@ function clickCreateSeats() {
     htmlAddDivs(seatNumber, $vip, 'V');
     $vip.attr('data-price', formatCurrency(price));
     $('#section-input > option:selected').addClass('disabled');
-    $('#section-input > option:selected').val('ga');
+    $('#section-input').val('ga');
   } else {
     htmlAddDivs(seatNumber, $ga, 'GA');
     $ga.attr('data-price', formatCurrency(price));
     $('#section-input > option:selected').addClass('disabled');
-    $('#section-input > option:selected').val('vip');
+    $('#section-input').val('vip');
   }
   if($('option.disabled').length === 3) {
     $('#add-seats').remove();
