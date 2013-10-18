@@ -17,13 +17,13 @@
     <div class='small-12 columns'>
       <header>
         <h1 class='center'>Concerter</h1>
-        <div class='row'>
+        <div class='row' id='add-seats'>
           <div class='small-3 columns'>
             <form class='custom'>
               <label for='select-input'>Select Section:</label>
-              <select class='custom dropdown medium' id='section-input'>
+              <select class='medium' id='section-input'>
                 <option class='disabled'>Select</option>
-                <option value='vip]'>VIP Section</option>
+                <option value='vip'>VIP Section</option>
                 <option value='ga'>General Admission</option>
               </select>
             </form>
@@ -37,7 +37,7 @@
             <input id='price-input' placeholder='110' type='text'>
           </div>
           <div class='small-3 columns'>
-            <input class='button radius' id='create-seats' type='button' value='Create'>
+            <input class='button radius small' id='create-seats' type='button' value='Create'>
           </div>
         </div>
       </header>

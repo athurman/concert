@@ -1,8 +1,13 @@
 html, body {
   background-color: #BEF4E0; }
 
+footer {
+  margin: 20px 5px;
+  color: #8DC2A5; }
+
 h1 {
-  color: #48A9BF; }
+  color: #6A918A;
+  text-shadow: 1px 1px 1px #C7FFEA; }
 
 .center {
   text-align: center; }
@@ -18,4 +23,20 @@ h1 {
 
 #stage-outline > h3 {
   padding-top: 40px;
+  color: #fff; }
+
+#vip {
+  width: 600px; }
+
+#vip, #ga {
+  margin: 0 auto;
+  margin-top: 50px; }
+
+#vip > div, #ga > div {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  float: left;
+  background-color: #999;
+  font-size: 8px;
   color: #fff; }

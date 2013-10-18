@@ -7,9 +7,9 @@
         .small-3.columns
           %form.custom
             %label{for:'select-input'} Select Section:
-            %select#section-input.custom.dropdown.medium
+            %select#section-input.medium
               %option.disabled Select
-              %option{value:'vip]'} VIP Section
+              %option{value:'vip'} VIP Section
               %option{value:'ga'} General Admission
         .small-3.columns
           %label{for:'seats-input'} Number of Seats:
@@ -18,7 +18,7 @@
           %label{for:'price-input'} Price per Seat:
           %input#price-input{type:'text', placeholder:'110'}
         .small-3.columns
-          %input#create-seats.button.radius{type:'button', value:'Create'}
+          %input#create-seats.button.radius.small{type:'button', value:'Create'}
 .row
   .small-12.columns
     %section#stage
