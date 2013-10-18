@@ -30,8 +30,11 @@ function clickCreateSeats() {
     $('#section-input > option').val('vip').addClass('disabled');
   } else {
     htmlAddDivs(seatNumber, $ga, 'GA');
-    $ga.attr('data-price', price);
+    $ga.attr('data-price', formatCurrency(price));
     $('#section-input > option').val('ga').remove();
+  }
+  if($('#section-input > option.disabled').length === 3) {
+    $('#add-seats').remove();
   }
 }
 
