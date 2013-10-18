@@ -26,12 +26,12 @@ function clickCreateSeats() {
   var $ga = $('#ga');
   if ($('#section-input > option:selected').val() === 'vip') {
     htmlAddDivs(seatNumber, $vip, 'V');
-    $vip.attr('data-price', formatCurrency(price));
+    $vip.data('price', formatCurrency(price));
     $('#section-input > option:selected').remove();
     $('#section-input').val('ga');
   } else {
     htmlAddDivs(seatNumber, $ga, 'GA');
-    $ga.attr('data-price', formatCurrency(price));
+    $ga.data('price', formatCurrency(price));
     $('#section-input > option:selected').remove();
     $('#section-input').val('vip');
   }
@@ -49,7 +49,7 @@ function htmlAddDivs(seatNumber, section, sectionType) {
   for(var i = 1; i <= seatNumber; i++) {
     var $seat = $('<div>');
     var seatId = sectionType + i;
-    $seat.text(seatId).addClass(seatId);
+    $seat.text(seatId).data('seat', seatId);
     section.append($seat);
   }
 }
