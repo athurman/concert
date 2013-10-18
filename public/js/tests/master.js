@@ -17,7 +17,7 @@ function createSeats(section,seats,price){
 }
 
 function existAndVisible(element){
-	deepEqual(element.length?, true, element.selector + 'should exist');
+	deepEqual(element.length, true, element.selector + 'should exist');
   deepEqual(element.is(':visible'), true, element.selector + 'should be visible');
 }
 
