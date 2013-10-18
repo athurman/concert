@@ -46,10 +46,11 @@ function clickCreateSeats() {
 // -------------------------------------------------------------------- //
 
 function htmlAddDivs(seatNumber, section, sectionType) {
-  for(var i = 0; i < seatNumber; i++) {
+  for(var i = 1; i <= seatNumber; i++) {
     var $seat = $('<div>');
-    $seat.text(sectionType + i);
-    section.prepend($seat);
+    var seatId = sectionType + i;
+    $seat.text(seatId).addClass(seatId);
+    section.append($seat);
   }
 }
 
