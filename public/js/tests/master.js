@@ -75,3 +75,10 @@ test('If both section have been created, then create seats section is not visibl
   createSeats('ga','500',50);
   deepEqual($('#add-seats').is(':visible'), false, ' #add-seats should not be visible');
 });
+
+test('After Create Seats Button is clicked, change dropdown selection to :not(:selected)', function(){
+  expect(1);
+  createSeats('vip','50',500);
+  deepEqual($('#section-input > option:selected').val(), 'ga',
+  	'General Admission should be selected');
+});
