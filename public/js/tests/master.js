@@ -17,7 +17,7 @@ function createSeats(section,seats,price){
 }
 
 function existAndVisible(element){
-	deepEqual(element.length, true, element.selector + ' should exist');
+	equal(element.length, true, element.selector + ' should exist');
   deepEqual(element.is(':visible'), true, element.selector + ' should be visible');
 }
 
@@ -53,16 +53,20 @@ test('Create Seats Button adds data-price element to the proper section', functi
   expect(2);
   createSeats('vip','50',500);
   createSeats('ga','500',50);
-  deepEqual($('#vip').data('price'), 500,	'VIP section should hava a data-price element of 500');
-  deepEqual($('#ga').data('price'), 50,	'General Addmission section should have a data-price element of 50');
+  deepEqual($('#vip').data('price'), '$500.00',
+  	'VIP section should hava a data-price element of 500');
+  deepEqual($('#ga').data('price'), '$50.00',
+  	'General Addmission section should have a data-price element of 50');
 });
 
 test('Create Seats Button removes prior selections', function(){
-  expect(1);
+  expect(2);
   createSeats('vip','50',500);
-  deepEqual($('#section-input').val('vip'), false,	'VIP selection should be removed once seats have been added');
+  deepEqual($('#section-input').hasClass('disabled'), false,
+  	'VIP selection should be removed once seats have been added');
   createSeats('vip','50',500);
-  deepEqual($('#section-input').val('ga'), false, 'General Admission selection should be removed once seats have been added');
+  deepEqual($('#section-input').hasClass('disabled'), false,
+  	'General Admission selection should be removed once seats have been added');
 });
 
 test('If both section have been created, then create seats section is not visible', function(){
