@@ -55,9 +55,9 @@ test('Create Seats Button adds data-price element to the proper section', functi
   expect(2);
   createSeats('vip','50',500);
   createSeats('ga','500',50);
-  deepEqual($('#vip').data('price'), 500,
+  deepEqual($('#vip').data('price'), '$500.00',
   	'VIP section should hava a data-price element of 500');
-  deepEqual($('#ga').data('price'), 50,
+  deepEqual($('#ga').data('price'), '$50.00',
   	'General Addmission section should have a data-price element of 50');
 });
 
