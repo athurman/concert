@@ -18,6 +18,10 @@ h1 {
   text-shadow: 1px 1px 1px #C7FFEA;
 }
 
+.seat {
+  background-color: #999;
+}
+
 .center {
   text-align: center;
 }
@@ -51,7 +55,10 @@ h1 {
   height: 30px;
   margin: 5px;
   float: left;
-  background-color: #999;
   font-size: 8px;
   color: #fff;
+}
+
+.reserved {
+  background-color: #71E7FF;
 }

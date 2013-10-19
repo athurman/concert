@@ -12,6 +12,8 @@ function initialize(fn, flag){
 
   $(document).foundation();
   $('#create-seats').click(clickCreateSeats);
+  $('#ga, #vip').on('dblclick', '.seat', clickReserveSeat);
+  $('#seatModal').on('click', '.name-submit', clickSubmitName);
   // initMap(36, -86, 5);
 }
 
@@ -41,6 +43,34 @@ function clickCreateSeats() {
   }
 }
 
+function clickReserveSeat() {
+  var $seat = $(this);
+  var $nameInput = $('<input>');
+  $nameInput.attr('type', 'text').attr('placeholder', 'Jane Doe').addClass('name');
+  var $submitBtn = $('<input>');
+  $submitBtn.attr('type', 'button').val('Submit').addClass('button small radius name-submit');
+  var $par = $('<p>');
+
+  if($seat.hasClass('reserved')) {
+    $('#seatModal > section').empty();
+    $par.text('This seat is already reserved.');
+    $('#seatModal > section').append($par);
+    $('#seatModal').foundation('reveal', 'open');
+  } else {
+    $seat.addClass('reserved');
+    $('#seatModal > section').append($nameInput);
+    $('#seatModal > section').append($submitBtn);
+    $('#seatModal').foundation('reveal', 'open');
+    $('#seatModal span').text($seat.data('seat'));
+  }
+}
+
+function clickSubmitName(seat) {
+  var $submitBtn = $(this);
+  var name = $submitBtn.prev().val();
+  seat.data('name', name);
+}
+
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
@@ -50,9 +80,11 @@ function htmlAddDivs(seatNumber, section, sectionType) {
     var $seat = $('<div>');
     var seatId = sectionType + i;
     $seat.text(seatId).data('seat', seatId);
+    $seat.addClass('seat');
     section.append($seat);
   }
 }
+
 
 // -------------------------------------------------------------------- //
 // -------------------------------------------------------------------- //
