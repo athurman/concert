@@ -4,6 +4,7 @@
 
 
 // Local Schema (defined in keys.js)
+var names = [];
 
 $(document).ready(initialize);
 
@@ -58,6 +59,7 @@ function clickReserveSeat() {
     $('#seatModal').foundation('reveal', 'open');
   } else {
     $seat.addClass('reserved');
+    $('#seatModal > section').empty();
     $('#seatModal > section').append($nameInput);
     $('#seatModal > section').append($submitBtn);
     $('#seatModal').foundation('reveal', 'open');
@@ -65,10 +67,10 @@ function clickReserveSeat() {
   }
 }
 
-function clickSubmitName(seat) {
+function clickSubmitName() {
   var $submitBtn = $(this);
   var name = $submitBtn.prev().val();
-  seat.data('name', name);
+  names.push(name);
 }
 
 // -------------------------------------------------------------------- //
