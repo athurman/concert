@@ -83,13 +83,21 @@ test('After Create Seats Button is clicked, change dropdown selection to :not(:s
   	'General Admission should be selected');
 });
 
-test('Seat should turn blue if reserved', function(){
+test('Modal shows up on the double click', function(){
   expect(1);
   createSeats('vip','50',500);
   createSeats('ga','500',50);
 
   $('*[data-seat="V22"]').trigger('dblclick');
-  $('#seatModal.name').val('Amanda');
+  deepEqual($('#seatModal').css('visibility'), 'visible', 'Modal should be visible.');
+});
+
+test('Modal closes after name submit', function(){
+  expect(1);
+  createSeats('vip','50',500);
+  createSeats('ga','500',50);
+
+  $('*[data-seat="V22"]').trigger('dblclick');
   $('.name-submit').trigger('click');
-  deepEqual($('*[data-seat="V22"]').css('background-color'), 'rgba(113, 231, 255, 0)', 'Background color should be blue');
+  deepEqual($('#seatModal').css('visibility'), 'hidden', 'Modal should be hidden.');
 });
