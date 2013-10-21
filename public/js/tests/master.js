@@ -98,6 +98,20 @@ test('Modal closes after name submit', function(){
   createSeats('ga','500',50);
 
   $('*[data-seat="V22"]').trigger('dblclick');
+  $('.name').val('Amanda');
   $('.name-submit').trigger('click');
-  deepEqual($('#seatModal').css('visibility'), 'hidden', 'Modal should be hidden.');
+  deepEqual($('*[data-seat="V22"]').data('name'), 'Amanda', 'Name becomes data-name attribute in selected div.');
+});
+
+test('seat turns blue when reserved', function(){
+  expect(2);
+  createSeats('vip','50',500);
+  createSeats('ga','500',50);
+
+  $('*[data-seat="V22"]').trigger('dblclick');
+  $('.name').val('Amanda');
+  $('.name-submit').trigger('click');
+  debugger;
+  deepEqual($('*[data-seat="V22"]').hasClass('reserved'), true, 'Name becomes data-name attribute in selected div.');
+  deepEqual($('*[data-seat="V22"]').css('background-color'), '#71E7FF', 'Name becomes data-name attribute in selected div.');
 });

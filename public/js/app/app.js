@@ -88,7 +88,7 @@ function clickSubmitName() {
 // -------------------------------------------------------------------- //
 
 function reserveSeat(id,name) {
-  var $body = $('.body');
+  var $body = $('body');
   var $seat = $body.find('div[data-seat="' + id + '"]');
   $seat.attr('data-name', name);
   $seat.addClass('reserved');
