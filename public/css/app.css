@@ -9,6 +9,10 @@ h1 {
   color: #6A918A;
   text-shadow: 1px 1px 1px #C7FFEA; }
 
+h3 {
+  color: #6A918A;
+  text-align: center; }
+
 .seat {
   background-color: #999; }
 
@@ -42,6 +46,16 @@ h1 {
   float: left;
   font-size: 8px;
   color: #fff; }
+
+#total-reporting, #seat-list {
+  float: left;
+  width: 450px; }
+
+#seats-total, #totals {
+  margin: 0 auto;
+  background: none;
+  border: 0px;
+  color: #8DC2A5; }
 
 .reserved {
   background-color: #71E7FF; }

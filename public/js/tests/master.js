@@ -82,3 +82,14 @@ test('After Create Seats Button is clicked, change dropdown selection to :not(:s
   deepEqual($('#section-input > option:selected').val(), 'ga',
   	'General Admission should be selected');
 });
+
+test('Seat should turn blue if reserved', function(){
+  expect(1);
+  createSeats('vip','50',500);
+  createSeats('ga','500',50);
+
+  $('*[data-seat="V22"]').trigger('dblclick');
+  $('#seatModal.name').val('Amanda');
+  $('.name-submit').trigger('click');
+  deepEqual($('*[data-seat="V22"]').css('background-color'), 'rgba(113, 231, 255, 0)', 'Background color should be blue');
+});
